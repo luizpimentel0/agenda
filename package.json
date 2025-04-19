@@ -5,7 +5,9 @@
   "scripts": {
     "build": "tsc",
     "dev": "nodemon --exec 'ts-node -r tsconfig-paths/register' src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:fix": "eslint --fix",
+    "lint": "eslint"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +21,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "dotenv": "^16.4.7",
-    "eslint": "^9.22.0",
+    "eslint": "^9.25.0",
     "express": "^4.21.2",
     "mysql2": "^3.13.0",
     "prettier": "^3.5.3",
@@ -29,6 +31,9 @@
     "typescript": "^5.8.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "@eslint/js": "^9.25.0",
+    "globals": "^16.0.0",
+    "nodemon": "^3.1.9",
+    "typescript-eslint": "^8.30.1"
   }
 }

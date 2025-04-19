@@ -1,7 +1,7 @@
 import { IsEmail, IsNotEmpty, Length } from "class-validator";
 export class UserDTO {
   @IsNotEmpty({ message: "O nome é obrigatório" })
-  @Length(3, 70, { message: "O nome deve conter entre 5 e 70 caracteres" })
+  @Length(3, 70, { message: "O nome deve conter entre 3 e 70 caracteres" })
   name!: string;
 
   @IsEmail({}, { message: "O e-mail informado é inválido" })

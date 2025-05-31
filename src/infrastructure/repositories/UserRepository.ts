@@ -53,7 +53,18 @@ export class UserRepository implements IUserRepository {
     }
   }
 
-  findById(id: number): Promise<User | null> {
-    throw new Error("Method not implemented");
+
+  async deleteById(id: number): Promise<boolean> {
+    try {
+      const [result] = await this.pool.execute(
+        "DELETE FROM users WHERE id = ?",
+        [id],
+      );
+
+      return (result as any).affectedRows > 0;
+    } catch (error) {
+      console.error(error);
+      throw new Error(`Erro ao deletar o usuário com ID ${id}: ${error}`);
+    }
   }
 }

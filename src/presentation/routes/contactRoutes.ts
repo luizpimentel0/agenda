@@ -17,7 +17,7 @@ router.post('/contacts', validateDTO(ContactDTO), async (req, res, next) => {
 
 router.get('/contacts/:username', async (req, res, next) => {
   try {
-    await contactController.getContactByUsername(req, res);
+    await contactController.getContactsByUsername(req, res);
   } catch (error) {
     next(error);
   }

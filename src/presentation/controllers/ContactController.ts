@@ -29,7 +29,7 @@ export class ContactController {
     }
   }
 
-  async getContactByUsername(req: Request, res: Response) {
+  async getContactsByUsername(req: Request, res: Response) {
     try {
       const username = req.params.username;
       const contacts: ContactDTO[] | null = await this.getContactsByUsernameUseCase.execute(username);

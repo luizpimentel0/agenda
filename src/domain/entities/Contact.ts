@@ -1,5 +1,4 @@
 export class Contact {
-  id?: number;
   phone: string;
   message_phone?: string;
   email: string;

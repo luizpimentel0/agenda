@@ -21,8 +21,8 @@ export class ContactRepository implements IContactRepository {
   async findContactsByUsername(name: string): Promise<Contact[] | null> {
     try {
       const [result] = await this.pool.execute(
-        "SELECT c.email, c.phone, c.message_phone, c.address, u.name from contacts c INNER JOIN users u on c.user_id = u.id where u.name = ?",
-        [name]
+        "SELECT c.email, c.phone, c.message_phone, c.address, u.name from contacts c INNER JOIN users u on c.user_id = u.user_id where u.name LIKE ?",
+        [`%${name}%`]
       );
 
       if (Array.isArray(result) && result.length > 0) {
